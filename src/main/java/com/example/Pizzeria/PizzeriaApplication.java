@@ -27,7 +27,7 @@ public class PizzeriaApplication {
 		m.getListaBevande().forEach(el->{
 			System.out.print("-"+el.getNome());
 			System.out.print("    Prezzo: "+el.getPrezzo());
-			System.out.print("\nCalorie: "+el.getCalorie()+"\n\n");
+			System.out.print("€\nCalorie: "+el.getCalorie()+"\n\n");
 		});
 
 		System.out.println("Aggiunte:\n");
@@ -35,7 +35,7 @@ public class PizzeriaApplication {
 		m.getListaAggiunte().forEach(el->{
 			System.out.print("-"+el.getNome());
 			System.out.print("    Prezzo: "+el.getPrezzo());
-			System.out.print("\nCalorie: "+el.getCalorie()+"\n\n");
+			System.out.print("€\nCalorie: "+el.getCalorie()+"\n\n");
 		});
 	}
 
