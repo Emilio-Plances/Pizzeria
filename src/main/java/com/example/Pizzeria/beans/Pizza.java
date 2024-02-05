@@ -11,6 +11,7 @@ public class Pizza {
     private int calorie=1000;
     private List<Aggiunta> aggiunte=new ArrayList<>();
     private double prezzo;
+    private double prezzoXL;
 
     public void addAggiunta(Aggiunta a){
         aggiunte.add(a);
@@ -18,5 +19,10 @@ public class Pizza {
     }
     public void sumCalorie(){
         aggiunte.forEach(el->calorie+=el.getCalorie());
+    }
+
+    public void setPrezzo(double prezzo) {
+        this.prezzo = prezzo;
+        prezzoXL=this.prezzo+4.0;
     }
 }
