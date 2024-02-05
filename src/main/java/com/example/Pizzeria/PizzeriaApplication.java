@@ -16,7 +16,7 @@ public class PizzeriaApplication {
 		System.out.println("Pizze:\n");
 		m.getListaPizze().forEach(el->{
 			System.out.print("-"+el.getNome());
-			System.out.print("    Prezzo: "+el.getPrezzo()+ "    Prezzo XL"+el.getPrezzoXL());
+			System.out.print("    Prezzo: "+el.getPrezzo()+ "    Prezzo XL: "+el.getPrezzoXL());
 			System.out.print("€\nIngredienti:");
 			el.getAggiunte().forEach(agg-> System.out.print(" "+agg.getNome()));
 			System.out.print("\nCalorie: "+el.getCalorie()+"\n\n");
