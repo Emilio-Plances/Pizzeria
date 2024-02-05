@@ -86,7 +86,6 @@ public class AppConfig {
     @Scope("prototype")
     public Pizza getMargherita(){
         Pizza p=new Pizza();
-        p.setPrezzo(4.99);
         p.setNome("Margherita");
         p.addAggiunta(getMozzarella());
         p.addAggiunta(getPomodoro());
@@ -95,7 +94,6 @@ public class AppConfig {
     @Bean("hawaiana")
     public Pizza getHawaiana(){
         Pizza p=getMargherita();
-        p.setPrezzo(6.49);
         p.setNome("Hawaiana");
         p.addAggiunta(getProsciutto());
         p.addAggiunta(getAnanas());
@@ -104,7 +102,6 @@ public class AppConfig {
     @Bean("salamiPizza")
     public Pizza getPizzaSalami(){
         Pizza p=getMargherita();
-        p.setPrezzo(5.99);
         p.setNome("Salami");
         p.addAggiunta(getSalame());
         return p;

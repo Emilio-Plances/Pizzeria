@@ -13,30 +13,7 @@ public class PizzeriaApplication {
 		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(AppConfig.class);
 		Menu m=ctx.getBean(Menu.class);
 
-		System.out.println("Pizze:\n");
-		m.getListaPizze().forEach(el->{
-			System.out.print("-"+el.getNome());
-			System.out.print("    Prezzo: "+el.getPrezzo()+ "    Prezzo XL: "+el.getPrezzoXL());
-			System.out.print("€\nIngredienti:");
-			el.getAggiunte().forEach(agg-> System.out.print(" "+agg.getNome()));
-			System.out.print("\nCalorie: "+el.getCalorie()+"\n\n");
-		});
-
-		System.out.println("Bevande:\n");
-
-		m.getListaBevande().forEach(el->{
-			System.out.print("-"+el.getNome());
-			System.out.print("    Prezzo: "+el.getPrezzo());
-			System.out.print("€\nCalorie: "+el.getCalorie()+"\n\n");
-		});
-
-		System.out.println("Aggiunte:\n");
-
-		m.getListaAggiunte().forEach(el->{
-			System.out.print("-"+el.getNome());
-			System.out.print("    Prezzo: "+el.getPrezzo());
-			System.out.print("€\nCalorie: "+el.getCalorie()+"\n\n");
-		});
+		m.stampa();
 	}
 
 }
