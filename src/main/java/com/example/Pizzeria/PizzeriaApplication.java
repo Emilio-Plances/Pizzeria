@@ -12,8 +12,6 @@ public class PizzeriaApplication {
 		SpringApplication.run(PizzeriaApplication.class, args);
 		AnnotationConfigApplicationContext ctx=new AnnotationConfigApplicationContext(AppConfig.class);
 		Menu m=ctx.getBean(Menu.class);
-
 		m.stampa();
 	}
-
 }

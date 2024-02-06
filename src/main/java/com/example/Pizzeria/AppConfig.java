@@ -1,12 +1,16 @@
 package com.example.Pizzeria;
 
-import com.example.Pizzeria.beans.Aggiunta;
-import com.example.Pizzeria.beans.Bevanda;
-import com.example.Pizzeria.beans.Menu;
-import com.example.Pizzeria.beans.Pizza;
+import com.example.Pizzeria.beans.*;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.annotation.Scope;
 
+import java.time.LocalDateTime;
+
+@Configuration
+@PropertySource("application.properties")
 public class AppConfig {
     @Bean("pomodoro")
     public Aggiunta getPomodoro(){
@@ -124,5 +128,28 @@ public class AppConfig {
         m.addAggiunta(getSalame());
         m.addAggiunta(getMozzarella());
         return m;
+    }
+
+    @Bean("tavolo")
+    public Tavolo tavolo(@Value("${Pizzeria.maxCoperti}") String postiMax){
+        Tavolo t=new Tavolo();
+        t.setStatoTavolo(StatoTavolo.OCCUPATO);
+        t.setMaxCoperti(Integer.parseInt(postiMax));
+        t.setId(1);
+        return t;
+    }
+
+    @Bean("ordine1")
+    public Ordine ordine(){
+        Ordine o=new Ordine();
+        o.setId(1);
+        o.setCoperti(2);
+        o.addProdotto(getMargherita());
+        o.addProdotto(getPizzaSalami());
+        o.addProdotto(getAcqua());
+        o.addProdotto(getProsciutto());
+        o.setStatoOrdine(StatoOrdine.IN_CORSO);
+        o.setOraAcquisizione(LocalDateTime.now());
+        return o;
     }
 }
