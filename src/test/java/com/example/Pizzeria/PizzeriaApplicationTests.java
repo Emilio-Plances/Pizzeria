@@ -48,7 +48,7 @@ class PizzeriaApplicationTests {
 		Pizza pizza= m.getListaPizze().stream().filter(el->el.getNome().equals("Margherita")).toList().getFirst();
 		Assertions.assertAll(
 				()->assertThat(pizza).isNotNull(),
-				()->Assertions.assertTrue(pizza.getAggiunte().contains(a))
+				()->Assertions.assertTrue(pizza.getListaAggiunte().contains(a))
 		);
 	}
 	@ParameterizedTest

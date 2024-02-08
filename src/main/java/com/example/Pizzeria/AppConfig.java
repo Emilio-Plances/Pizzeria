@@ -135,15 +135,21 @@ public class AppConfig {
         Tavolo t=new Tavolo();
         t.setStatoTavolo(StatoTavolo.OCCUPATO);
         t.setMaxCoperti(Integer.parseInt(postiMax));
-        t.setId(1);
         return t;
     }
 
+    @Bean("tavolo1")
+    public Tavolo getTavolo(){
+        Tavolo t=new Tavolo();
+        t.setStatoTavolo(StatoTavolo.OCCUPATO);
+        t.setMaxCoperti(5);
+        return t;
+    }
     @Bean("ordine1")
     public Ordine ordine(){
         Ordine o=new Ordine();
-        o.setId(1);
         o.setCoperti(2);
+        o.setTavolo(getTavolo());
         o.addProdotto(getMargherita());
         o.addProdotto(getPizzaSalami());
         o.addProdotto(getAcqua());

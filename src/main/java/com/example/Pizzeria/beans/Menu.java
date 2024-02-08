@@ -26,7 +26,7 @@ public class Menu {
             System.out.print("-"+el.getNome());
             System.out.print("    Prezzo: "+el.getPrezzo()+ "€    Prezzo XL: "+el.getPrezzoXL());
             System.out.print("€\nIngredienti:");
-            el.getAggiunte().forEach(agg-> System.out.print(" "+agg.getNome()));
+            el.getListaAggiunte().forEach(agg-> System.out.print(" "+agg.getNome()));
             System.out.print("\nCalorie: "+el.getCalorie()+"\n\n");
         });
         System.out.println("Bevande:\n");
